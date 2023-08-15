@@ -1,0 +1,417 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3"
+         xmlns="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#"
+         xmlns:Voll="http://www.semanticweb.org/ajay/ontologies/2022/3/Volleyballonto#">
+
+<owl:Ontology rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3"/>
+
+<owl:ObjectProperty rdf:about="#hasPlayer">
+  <rdfs:subPropertyOf rdf:resource="#hasTeam"/>
+  <rdfs:domain rdf:resource="#Team"/>
+  <rdfs:range rdf:resource="#Player"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasTeam">
+  <rdfs:subPropertyOf rdf:resource="#hasTournament"/>
+  <rdfs:domain rdf:resource="#Tournament"/>
+  <rdfs:range rdf:resource="#Team"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasLineJudge">
+  <rdfs:subPropertyOf rdf:resource="#hasMatch"/>
+  <rdfs:domain rdf:resource="#Match"/>
+  <rdfs:range rdf:resource="#Line_Judge"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasMatch">
+  <rdfs:subPropertyOf rdf:resource="#hasTournament"/>
+  <rdfs:domain rdf:resource="#Tournament"/>
+  <rdfs:range rdf:resource="#Match"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasTournament">
+  <rdfs:domain rdf:resource="#Volleyball"/>
+  <rdfs:range rdf:resource="#Tournament"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasOrganizer">
+  <rdfs:subPropertyOf rdf:resource="#hasTournament"/>
+  <rdfs:domain rdf:resource="#Tournament"/>
+  <rdfs:range rdf:resource="#Organizer"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasLocation">
+  <rdfs:subPropertyOf rdf:resource="#hasTournament"/>
+  <rdfs:domain rdf:resource="#Tournament"/>
+  <rdfs:range rdf:resource="#Location"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasCoach">
+  <rdfs:subPropertyOf rdf:resource="#hasTeam"/>
+  <rdfs:domain rdf:resource="#Team"/>
+  <rdfs:range rdf:resource="#Coach"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasTeam2">
+  <rdfs:subPropertyOf rdf:resource="#hasMatch"/>
+  <rdfs:domain rdf:resource="#Match"/>
+  <rdfs:range rdf:resource="#Team2"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasSponsor">
+  <rdfs:subPropertyOf rdf:resource="#hasTournament"/>
+  <rdfs:domain rdf:resource="#Tournament"/>
+  <rdfs:range rdf:resource="#Sponsor"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasReferee">
+  <rdfs:subPropertyOf rdf:resource="#hasMatch"/>
+  <rdfs:domain rdf:resource="#Match"/>
+  <rdfs:range rdf:resource="#Referee"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasPosition">
+  <rdfs:subPropertyOf rdf:resource="#hasPlayer"/>
+  <rdfs:domain rdf:resource="#Player"/>
+  <rdfs:range rdf:resource="#Position"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasSet">
+  <rdfs:subPropertyOf rdf:resource="#hasMatch"/>
+  <rdfs:domain rdf:resource="#Match"/>
+  <rdfs:range rdf:resource="#Set"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasTeam1">
+  <rdfs:subPropertyOf rdf:resource="#hasMatch"/>
+  <rdfs:domain rdf:resource="#Match"/>
+  <rdfs:range rdf:resource="#Team1"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasTeam2Score">
+  <rdfs:subPropertyOf rdf:resource="#hasSet"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasTeam1Score">
+  <rdfs:subPropertyOf rdf:resource="#hasSet"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#teamID"/>
+
+<owl:DatatypeProperty rdf:about="#birthdate"/>
+
+<owl:DatatypeProperty rdf:about="#hometown">
+  <rdfs:subPropertyOf rdf:resource="#jersey_no"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#jersey_no"/>
+
+<owl:Class rdf:about="#Player">
+  <rdfs:subClassOf rdf:resource="#Team"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Team">
+  <rdfs:subClassOf rdf:resource="#Tournament"/>
+  <owl:disjointWith rdf:resource="#Venue"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Sponsor">
+  <rdfs:subClassOf rdf:resource="#Tournament"/>
+  <owl:disjointWith rdf:resource="#Team"/>
+  <owl:disjointWith rdf:resource="#Venue"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Tournament"/>
+
+<owl:Class rdf:about="#Venue">
+  <rdfs:subClassOf rdf:resource="#Tournament"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Match">
+  <rdfs:subClassOf rdf:resource="#Tournament"/>
+  <owl:disjointWith rdf:resource="#Organizer"/>
+  <owl:disjointWith rdf:resource="#Sponsor"/>
+  <owl:disjointWith rdf:resource="#Team"/>
+  <owl:disjointWith rdf:resource="#Venue"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Line_Judge">
+  <rdfs:subClassOf rdf:resource="#Match"/>
+  <owl:disjointWith rdf:resource="#Referee"/>
+  <owl:disjointWith rdf:resource="#Set"/>
+  <owl:disjointWith rdf:resource="#Team1"/>
+  <owl:disjointWith rdf:resource="#Team2"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Set">
+  <rdfs:subClassOf rdf:resource="#Match"/>
+  <owl:disjointWith rdf:resource="#Team1"/>
+  <owl:disjointWith rdf:resource="#Team2"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Team1">
+  <rdfs:subClassOf rdf:resource="#Match"/>
+  <owl:disjointWith rdf:resource="#Team2"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Team2">
+  <rdfs:subClassOf rdf:resource="#Match"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Coach">
+  <rdfs:subClassOf rdf:resource="#Team"/>
+  <owl:disjointWith rdf:resource="#Player"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Location">
+  <rdfs:subClassOf rdf:resource="#Tournament"/>
+  <owl:disjointWith rdf:resource="#Match"/>
+  <owl:disjointWith rdf:resource="#Organizer"/>
+  <owl:disjointWith rdf:resource="#Sponsor"/>
+  <owl:disjointWith rdf:resource="#Team"/>
+  <owl:disjointWith rdf:resource="#Venue"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Organizer">
+  <rdfs:subClassOf rdf:resource="#Tournament"/>
+  <owl:disjointWith rdf:resource="#Sponsor"/>
+  <owl:disjointWith rdf:resource="#Team"/>
+  <owl:disjointWith rdf:resource="#Venue"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Position">
+  <rdfs:subClassOf rdf:resource="#Player"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Referee">
+  <rdfs:subClassOf rdf:resource="#Match"/>
+  <owl:disjointWith rdf:resource="#Set"/>
+  <owl:disjointWith rdf:resource="#Team1"/>
+  <owl:disjointWith rdf:resource="#Team2"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Team1_Score">
+  <rdfs:subClassOf rdf:resource="#Set"/>
+  <owl:disjointWith rdf:resource="#Team2_Score"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Team2_Score">
+  <rdfs:subClassOf rdf:resource="#Set"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Volleyball"/>
+
+<Player rdf:about="#Daichi_Sawamura">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hometown>Miyagi Prefecture, Japan</hometown>
+  <jersey_no rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</jersey_no>
+</Player>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/ajay/ontologies/2022/3/Volleyballonto#usa">
+  <Voll:hasname rdf:resource="http://www.semanticweb.org/ajay/ontologies/2022/3/Volleyballonto#Johnny_Depp"/>
+  <Voll:hasname rdf:resource="http://www.semanticweb.org/ajay/ontologies/2022/3/Volleyballonto#Mike_Johnson"/>
+  <Voll:hasname rdf:resource="http://www.semanticweb.org/ajay/ontologies/2022/3/Volleyballonto#Andrew_Williams"/>
+  <Voll:hasname rdf:resource="http://www.semanticweb.org/ajay/ontologies/2022/3/Volleyballonto#David_Brown"/>
+  <Voll:hasname rdf:resource="http://www.semanticweb.org/ajay/ontologies/2022/3/Volleyballonto#Paul_Lee"/>
+  <Voll:hasname rdf:resource="http://www.semanticweb.org/ajay/ontologies/2022/3/Volleyballonto#Chris_Green"/>
+</rdf:Description>
+
+<Voll:allplayer rdf:about="http://www.semanticweb.org/ajay/ontologies/2022/3/Volleyballonto#Johnny_Depp">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <Voll:team_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">usa</Voll:team_id>
+  <Voll:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Johnny Depp</Voll:name>
+  <Voll:position rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</Voll:position>
+</Voll:allplayer>
+
+<Voll:allplayer rdf:about="http://www.semanticweb.org/ajay/ontologies/2022/3/Volleyballonto#Mike_Johnson">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <Voll:team_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">usa</Voll:team_id>
+  <Voll:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mike Johnson</Voll:name>
+  <Voll:position rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2</Voll:position>
+</Voll:allplayer>
+
+<Voll:allplayer rdf:about="http://www.semanticweb.org/ajay/ontologies/2022/3/Volleyballonto#Andrew_Williams">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <Voll:team_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">usa</Voll:team_id>
+  <Voll:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Andrew Williams</Voll:name>
+  <Voll:position rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3</Voll:position>
+</Voll:allplayer>
+
+<Voll:allplayer rdf:about="http://www.semanticweb.org/ajay/ontologies/2022/3/Volleyballonto#David_Brown">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <Voll:team_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">usa</Voll:team_id>
+  <Voll:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">David Brown</Voll:name>
+  <Voll:position rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4</Voll:position>
+</Voll:allplayer>
+
+<Voll:allplayer rdf:about="http://www.semanticweb.org/ajay/ontologies/2022/3/Volleyballonto#Paul_Lee">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <Voll:team_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">usa</Voll:team_id>
+  <Voll:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Paul Lee</Voll:name>
+  <Voll:position rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5</Voll:position>
+</Voll:allplayer>
+
+<Voll:allplayer rdf:about="http://www.semanticweb.org/ajay/ontologies/2022/3/Volleyballonto#Chris_Green">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <Voll:team_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">usa</Voll:team_id>
+  <Voll:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Green</Voll:name>
+  <Voll:position rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</Voll:position>
+</Voll:allplayer>
+
+<Team rdf:about="#Karasuno_High">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPlayer rdf:resource="#Azumane_Asahi"/>
+  <hasPlayer rdf:resource="#Daichi_Sawamura"/>
+  <hasPlayer rdf:resource="#Kei_Tsukishima"/>
+  <hasPlayer rdf:resource="#Shoyo_Hinata"/>
+  <hasPlayer rdf:resource="#Tobio_Kageyama"/>
+  <hasPlayer rdf:resource="#Yu_Nishinoya"/>
+  <rdf:type rdf:resource="#Volleyball"/>
+  <teamID>karasuno</teamID>
+</Team>
+
+<Player rdf:about="#Azumane_Asahi">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hometown>Miyagi Prefecture, Japan</hometown>
+  <jersey_no rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</jersey_no>
+</Player>
+
+<Player rdf:about="#Kei_Tsukishima">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hometown>Miyagi Prefecture, Japan</hometown>
+  <jersey_no rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</jersey_no>
+</Player>
+
+<Player rdf:about="#Shoyo_Hinata">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hometown>Miyagi Prefecture, Japan</hometown>
+  <jersey_no rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</jersey_no>
+</Player>
+
+<Player rdf:about="#Tobio_Kageyama">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hometown>Miyagi Prefecture, Japan</hometown>
+  <jersey_no rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</jersey_no>
+</Player>
+
+<Player rdf:about="#Yu_Nishinoya">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hometown>Miyagi Prefecture, Japan</hometown>
+  <jersey_no rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</jersey_no>
+</Player>
+
+<Player rdf:about="#Takahiro_Hanamaki">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hometown>Miyagi Prefecture, Japan</hometown>
+  <jersey_no rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</jersey_no>
+</Player>
+
+<Player rdf:about="#Hajime_Iwaizumi">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hometown>Miyagi Prefecture, Japan</hometown>
+  <jersey_no rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</jersey_no>
+</Player>
+
+<Voll:allplayer rdf:about="http://www.semanticweb.org/ajay/ontologies/2022/3/Volleyballonto#A001">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <Voll:orderDetails rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&lt;Element 'team1' at 0x000001F984106720&gt;</Voll:orderDetails>
+</Voll:allplayer>
+
+<Player rdf:about="#Shinji_Watari">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hometown>Miyagi Prefecture, Japan</hometown>
+  <jersey_no rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</jersey_no>
+</Player>
+
+<Voll:allplayer rdf:about="http://www.semanticweb.org/ajay/ontologies/2022/3/Volleyballonto#Mike_Adams">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <Voll:team_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">canada</Voll:team_id>
+  <Voll:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mike Adams</Voll:name>
+  <Voll:position rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5</Voll:position>
+</Voll:allplayer>
+
+<Voll:allplayer rdf:about="http://www.semanticweb.org/ajay/ontologies/2022/3/Volleyballonto#Foluke_Akinradewo_Gunderson">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <Voll:team_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">canada</Voll:team_id>
+  <Voll:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Foluke Akinradewo Gunderson</Voll:name>
+  <Voll:position rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2</Voll:position>
+</Voll:allplayer>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/ajay/ontologies/2022/3/Volleyballonto#canada">
+  <Voll:hasname rdf:resource="http://www.semanticweb.org/ajay/ontologies/2022/3/Volleyballonto#Jordan_Larson"/>
+  <Voll:hasname rdf:resource="http://www.semanticweb.org/ajay/ontologies/2022/3/Volleyballonto#Foluke_Akinradewo_Gunderson"/>
+  <Voll:hasname rdf:resource="http://www.semanticweb.org/ajay/ontologies/2022/3/Volleyballonto#Jordan_Thompson"/>
+  <Voll:hasname rdf:resource="http://www.semanticweb.org/ajay/ontologies/2022/3/Volleyballonto#Kelsey_Robinson"/>
+  <Voll:hasname rdf:resource="http://www.semanticweb.org/ajay/ontologies/2022/3/Volleyballonto#Mike_Adams"/>
+  <Voll:hasname rdf:resource="http://www.semanticweb.org/ajay/ontologies/2022/3/Volleyballonto#Peter_Hill"/>
+</rdf:Description>
+
+<Voll:allplayer rdf:about="http://www.semanticweb.org/ajay/ontologies/2022/3/Volleyballonto#Jordan_Larson">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <Voll:team_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">canada</Voll:team_id>
+  <Voll:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jordan Larson</Voll:name>
+  <Voll:position rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</Voll:position>
+</Voll:allplayer>
+
+<Voll:allplayer rdf:about="http://www.semanticweb.org/ajay/ontologies/2022/3/Volleyballonto#Jordan_Thompson">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <Voll:team_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">canada</Voll:team_id>
+  <Voll:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jordan Thompson</Voll:name>
+  <Voll:position rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3</Voll:position>
+</Voll:allplayer>
+
+<Voll:allplayer rdf:about="http://www.semanticweb.org/ajay/ontologies/2022/3/Volleyballonto#Kelsey_Robinson">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <Voll:team_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">canada</Voll:team_id>
+  <Voll:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kelsey Robinson</Voll:name>
+  <Voll:position rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4</Voll:position>
+</Voll:allplayer>
+
+<Voll:allplayer rdf:about="http://www.semanticweb.org/ajay/ontologies/2022/3/Volleyballonto#Peter_Hill">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <Voll:team_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">canada</Voll:team_id>
+  <Voll:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Peter Hill</Voll:name>
+  <Voll:position rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</Voll:position>
+</Voll:allplayer>
+
+<Team rdf:about="#Aoba_Johsai_High">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPlayer rdf:resource="#Hajime_Iwaizumi"/>
+  <hasPlayer rdf:resource="#Issei_Matsukawa"/>
+  <hasPlayer rdf:resource="#Shinji_Watari"/>
+  <hasPlayer rdf:resource="#Takahiro_Hanamaki"/>
+  <hasPlayer rdf:resource="#Toru_Oikawa"/>
+  <hasPlayer rdf:resource="#Yutaro_Kindaichi"/>
+  <rdf:type rdf:resource="#Volleyball"/>
+  <teamID>aoba_johsai</teamID>
+</Team>
+
+<Player rdf:about="#Issei_Matsukawa">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hometown>Miyagi Prefecture, Japan</hometown>
+  <jersey_no rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</jersey_no>
+</Player>
+
+<Player rdf:about="#Toru_Oikawa">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hometown>Miyagi Prefecture, Japan</hometown>
+  <jersey_no rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</jersey_no>
+</Player>
+
+<Player rdf:about="#Yutaro_Kindaichi">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hometown>Miyagi Prefecture, Japan</hometown>
+  <jersey_no rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</jersey_no>
+</Player>
+
+<Match rdf:about="#S001">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <teamID></teamID>
+</Match>
+
+
+</rdf:RDF>
