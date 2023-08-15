@@ -1,0 +1,566 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#"
+     xml:base="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasCoach -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasCoach">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasTeam"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Team"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Coach"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasLineJudge -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasLineJudge">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasMatch"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Match"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Line_Judge"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasLocation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasLocation">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasTournament"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Tournament"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasMatch -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasMatch">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasTournament"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Tournament"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Match"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasOrganizer -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasOrganizer">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasTournament"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Tournament"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Organizer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasPlayer -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasPlayer">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasTeam"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Team"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Player"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasPosition -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasPosition">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasPlayer"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Player"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Position"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasReferee -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasReferee">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasMatch"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Match"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Referee"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasSet -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasSet">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasMatch"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Match"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Set"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasSponsor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasSponsor">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasTournament"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Tournament"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Sponsor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasTeam -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasTeam">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasTournament"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Tournament"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Team"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasTeam1 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasTeam1">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasMatch"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Match"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Team1"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasTeam1Score -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasTeam1Score">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasTeam2 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasTeam2">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasMatch"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Match"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Team2"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasTeam2Score -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasTeam2Score">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasTournament -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hasTournament">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Volleyball"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Tournament"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#birthdate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#birthdate"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hometown -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#hometown">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#jersey_no"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#jersey_no -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#jersey_no"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#teamID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#teamID"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Coach -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Coach">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Team"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Player"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Line_Judge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Line_Judge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Match"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Referee"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Set"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Team1"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Team2"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Location -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Location">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Tournament"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Match"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Organizer"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Sponsor"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Team"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Venue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Match -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Match">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Tournament"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Organizer"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Sponsor"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Team"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Venue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Organizer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Organizer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Tournament"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Sponsor"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Team"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Venue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Player -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Player">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Team"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Position -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Position">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Player"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Referee -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Referee">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Match"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Set"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Team1"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Team2"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Set -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Set">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Match"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Team1"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Team2"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Sponsor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Sponsor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Tournament"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Team"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Venue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Team -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Team">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Tournament"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Venue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Team1 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Team1">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Match"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Team2"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Team1_Score -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Team1_Score">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Set"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Team2_Score"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Team2 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Team2">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Match"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Team2_Score -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Team2_Score">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Set"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Tournament -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Tournament"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Venue -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Venue">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Tournament"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Volleyball -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Volleyball"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Aoba_Johsai_High -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Aoba_Johsai_High">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Team"/>
+        <hasPlayer rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Hajime_Iwaizumi"/>
+        <hasPlayer rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Issei_Matsukawa"/>
+        <hasPlayer rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Shinji_Watari"/>
+        <hasPlayer rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Takahiro_Hanamaki"/>
+        <hasPlayer rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Toru_Oikawa"/>
+        <hasPlayer rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Yutaro_Kindaichi"/>
+        <teamID>aoba_johsai</teamID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Azumane_Asahi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Azumane_Asahi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Player"/>
+        <hometown>Miyagi Prefecture, Japan</hometown>
+        <jersey_no rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</jersey_no>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Daichi_Sawamura -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Daichi_Sawamura">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Player"/>
+        <hometown>Miyagi Prefecture, Japan</hometown>
+        <jersey_no rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</jersey_no>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Hajime_Iwaizumi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Hajime_Iwaizumi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Player"/>
+        <hometown>Miyagi Prefecture, Japan</hometown>
+        <jersey_no rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</jersey_no>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Issei_Matsukawa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Issei_Matsukawa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Player"/>
+        <hometown>Miyagi Prefecture, Japan</hometown>
+        <jersey_no rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</jersey_no>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Karasuno_High -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Karasuno_High">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Team"/>
+        <hasPlayer rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Azumane_Asahi"/>
+        <hasPlayer rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Daichi_Sawamura"/>
+        <hasPlayer rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Kei_Tsukishima"/>
+        <hasPlayer rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Shoyo_Hinata"/>
+        <hasPlayer rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Tobio_Kageyama"/>
+        <hasPlayer rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Yu_Nishinoya"/>
+        <teamID>karasuno</teamID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Kei_Tsukishima -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Kei_Tsukishima">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Player"/>
+        <hometown>Miyagi Prefecture, Japan</hometown>
+        <jersey_no rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</jersey_no>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#S001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#S001">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Match"/>
+        <teamID></teamID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Shinji_Watari -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Shinji_Watari">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Player"/>
+        <hometown>Miyagi Prefecture, Japan</hometown>
+        <jersey_no rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</jersey_no>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Shoyo_Hinata -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Shoyo_Hinata">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Player"/>
+        <hometown>Miyagi Prefecture, Japan</hometown>
+        <jersey_no rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</jersey_no>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Takahiro_Hanamaki -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Takahiro_Hanamaki">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Player"/>
+        <hometown>Miyagi Prefecture, Japan</hometown>
+        <jersey_no rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</jersey_no>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Tobio_Kageyama -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Tobio_Kageyama">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Player"/>
+        <hometown>Miyagi Prefecture, Japan</hometown>
+        <jersey_no rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</jersey_no>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Toru_Oikawa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Toru_Oikawa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Player"/>
+        <hometown>Miyagi Prefecture, Japan</hometown>
+        <jersey_no rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</jersey_no>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Yu_Nishinoya -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Yu_Nishinoya">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Player"/>
+        <hometown>Miyagi Prefecture, Japan</hometown>
+        <jersey_no rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</jersey_no>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Yutaro_Kindaichi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Yutaro_Kindaichi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rutuj/ontologies/2023/3/untitled-ontology-3#Player"/>
+        <hometown>Miyagi Prefecture, Japan</hometown>
+        <jersey_no rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</jersey_no>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+
