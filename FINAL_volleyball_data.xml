@@ -1,0 +1,2008 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE volleyball [
+    <!ELEMENT volleyball (tournament+)>
+    <!ELEMENT tournament (name, location, date, venue?, organizer?, sponsor*, teams, referees, match*)>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT location (#PCDATA)>
+    <!ELEMENT date (#PCDATA)>
+    <!ELEMENT venue (#PCDATA)>
+    <!ELEMENT organizer (#PCDATA)>
+    <!ELEMENT sponsor (#PCDATA)>
+
+    <!ELEMENT teams (team*)>
+    <!ELEMENT team (name, coach?, players)>
+    <!ATTLIST team teamID ID #REQUIRED>
+    <!ELEMENT coach (#PCDATA)>
+    <!ELEMENT players (player*)> 
+    <!ELEMENT player (name, position)>
+    <!ATTLIST player jersey CDATA #IMPLIED>
+    <!ATTLIST player height CDATA #IMPLIED>
+    <!ATTLIST player weight CDATA #IMPLIED>
+    <!ATTLIST player birthdate CDATA #IMPLIED>
+    <!ATTLIST player hometown CDATA #IMPLIED>
+    <!ATTLIST player year CDATA #IMPLIED>
+    <!ELEMENT position (#PCDATA)>
+    
+    <!ELEMENT referees (referee*)>
+    <!ELEMENT referee (#PCDATA)>
+    <!ATTLIST referee type CDATA #REQUIRED>
+    <!ATTLIST referee experience CDATA #IMPLIED>
+    
+    <!ELEMENT match (team1, team2, sets, referee?, line_judge*)>
+    <!ATTLIST match id ID #REQUIRED>
+    <!ATTLIST match court CDATA #IMPLIED>
+    <!ELEMENT sets (set*)>
+    
+    <!ELEMENT set (team1_score, team2_score)>
+    <!ATTLIST set id ID #IMPLIED>
+    <!ATTLIST set number CDATA #REQUIRED>
+    <!ATTLIST set duration CDATA #IMPLIED>
+    
+    <!ELEMENT team1 (#PCDATA)>
+    <!ATTLIST team1 teamref IDREF #REQUIRED>
+    <!ATTLIST team1 captain CDATA #IMPLIED>
+    <!ATTLIST team1 color CDATA #IMPLIED>
+    <!ATTLIST team1 serve_order CDATA #IMPLIED>
+    <!ATTLIST team1 timeout_remaining CDATA #IMPLIED>
+    
+    <!ELEMENT team2 (#PCDATA)>
+    <!ATTLIST team2 teamref IDREF #REQUIRED>
+    <!ATTLIST team2 captain CDATA #IMPLIED>
+    <!ATTLIST team2 color CDATA #IMPLIED>
+    <!ATTLIST team2 serve_order CDATA #IMPLIED>
+    <!ATTLIST team2 timeout_remaining CDATA #IMPLIED>
+    
+    <!ELEMENT team1_score (#PCDATA)>
+    <!ATTLIST team1_score timeout CDATA #IMPLIED>
+    
+    <!ELEMENT team2_score (#PCDATA)>
+    <!ATTLIST team2_score timeout CDATA #IMPLIED>
+        
+    <!ELEMENT line_judge (#PCDATA)>
+    <!ATTLIST line_judge position CDATA #REQUIRED>
+]>
+<volleyball>
+  <tournament>
+    <name>International Volleyball Championship</name>
+    <location>Los Angeles, CA</location>
+    <date>2023-06-10</date>
+    <venue>Staples Center</venue>
+    <organizer>International Volleyball Association</organizer>
+    <sponsor>Adidas</sponsor>
+    <sponsor>Nike</sponsor>
+    <teams>
+        <team teamID="usa">
+            <name>USA</name>
+            <coach>John Smith</coach>
+            <players>
+                <player jersey="1" height="190cm" weight="90kg" birthdate="1990-01-01" hometown="Los Angeles, USA" year="4">
+                    <name>Johnny Depp</name>
+                    <position>Setter</position>
+                </player>
+                <player jersey="2" height="195cm" weight="100kg" birthdate="1991-02-01" hometown="Chicago, USA" year="4">
+                    <name>Mike Johnson</name>
+                    <position>Outside Hitter</position>
+                </player>
+                <player jersey="3" height="200cm" weight="95kg" birthdate="1992-03-01" hometown="New York, USA" year="3">
+                    <name>Andrew Williams</name>
+                    <position>Middle Blocker</position>
+                </player>
+                <player jersey="4" height="185cm" weight="85kg" birthdate="1993-04-01" hometown="Houston, USA" year="2">
+                    <name>David Brown</name>
+                    <position>Libero</position>
+                </player>
+                <player jersey="5" height="192cm" weight="92kg" birthdate="1994-05-01" hometown="San Francisco, USA" year="1">
+                    <name>Paul Lee</name>
+                    <position>Opposite Hitter</position>
+                </player>
+                <player jersey="6" height="185cm" weight="88kg" birthdate="1995-06-01" hometown="Seattle, USA" year="1">
+                    <name>Chris Green</name>
+                    <position>Outside Hitter</position>
+                </player>
+            </players>
+            
+        </team>
+        <team teamID="canada">
+            <name>Canada</name>
+            <coach>Mike Lee</coach>
+            <players>    
+                <player jersey="1" height="185cm" weight="75kg" birthdate="June 19, 1982" hometown="Santa Cruz, California" year="10">
+                    <name>Jordan Larson</name>
+                    <position>Outside Hitter</position>
+                </player>
+                <player jersey="2" height="191cm" weight="82kg" birthdate="June 14, 1986" hometown="Houston, Texas" year="10">
+                    <name>Foluke Akinradewo Gunderson</name>
+                    <position>Middle Blocker</position>
+                </player>
+                <player jersey="3" height="188cm" weight="72kg" birthdate="January 10, 1990" hometown="Sachse, Texas" year="7">
+                    <name>Jordan Thompson</name>
+                    <position>Opposite Hitter</position>
+                </player>
+                <player jersey="4" height="188cm" weight="78kg" birthdate="June 4, 1988" hometown="Parker, Colorado" year="13">
+                    <name>Kelsey Robinson</name>
+                    <position>Outside Hitter</position>
+                </player>
+                <player jersey="5" height="190cm" weight="75kg" birthdate="November 18, 1993" hometown="El Segundo, California" year="5">
+                    <name>Mike Adams</name>
+                    <position>Middle Blocker</position>
+                </player>
+                <player jersey="6" height="168cm" weight="61kg" birthdate="July 5, 1987" hometown="Cypress, California" year="11">
+                    <name>Peter Hill</name>
+                    <position>Outside Hitter</position>
+                </player>
+            </players>
+        </team>
+    </teams>
+    <referees>
+      <referee type="first" experience="10 years">John Smith</referee>
+      <referee type="second" experience="5 years">Mary Johnson</referee>
+    </referees>
+    <match id="A001" court="1">
+        <team1 teamref="usa" captain="Johnny Depp" color="Red" serve_order="1">USA</team1>
+        <team2 teamref="canada" captain="Kelsey Robinson" color="White" serve_order="2">Canada</team2>
+        <sets>
+           <set id="A001a" number="1">
+               <team1_score timeout="1">25</team1_score>
+               <team2_score timeout="0">22</team2_score>
+           </set>
+           <set id="A001b" number="2">
+               <team1_score timeout="0">22</team1_score>
+               <team2_score timeout="1">25</team2_score>
+           </set>
+           <set id="A001c" number="3">
+               <team1_score timeout="2">25</team1_score>
+               <team2_score timeout="0">20</team2_score>
+           </set>
+        </sets>
+        <referee type="first">John Smith</referee>
+        <line_judge position="left">Mary Johnson</line_judge>
+        <line_judge position="right">Peter Parker</line_judge>
+    </match>   
+  </tournament>
+
+  <tournament>
+    <name>National Volleyball Championship</name>
+    <location>Madhya pradesh, Tamilnadu</location>
+    <date>2023-06-10</date>
+    <venue>IIT madrash Vollyboll cort</venue>
+    <organizer>National Volleyball Association</organizer>
+    <sponsor>Adidas</sponsor>
+    <sponsor>Nike</sponsor>
+    <teams>
+        <team teamID="MP">
+            <name>Madhya pradesh</name>
+            <coach>Subhash tripathi</coach>
+            <players>
+                <player jersey="1" height="180cm" weight="99kg" birthdate="1990-01-01" hometown="katni, MP" year="4">
+                    <name>Pranshu</name>
+                    <position>Setter</position>
+                </player>
+                <player jersey="2" height="195cm" weight="100kg" birthdate="1991-02-01" hometown="Chicago, USA" year="4">
+                    <name>Dipanshu</name>
+                    <position>Outside Hitter</position>
+                </player>
+                <player jersey="3" height="200cm" weight="95kg" birthdate="1992-03-01" hometown="New York, USA" year="3">
+                    <name>Rutuj</name>
+                    <position>Middle Blocker</position>
+                </player>
+                <player jersey="4" height="185cm" weight="85kg" birthdate="1993-04-01" hometown="Houston, USA" year="2">
+                    <name>kunal</name>
+                    <position>Libero</position>
+                </player>
+                <player jersey="5" height="192cm" weight="92kg" birthdate="1994-05-01" hometown="San Francisco, USA" year="1">
+                    <name>Sumit</name>
+                    <position>Opposite Hitter</position>
+                </player>
+                <player jersey="6" height="185cm" weight="88kg" birthdate="1995-06-01" hometown="Seattle, USA" year="1">
+                    <name>Ashish</name>
+                    <position>Outside Hitter</position>
+                </player>
+            </players>
+            
+        </team>
+        <team teamID="TN">
+            <name>Tamilnadu</name>
+            <coach>Mitesh khapra</coach>
+            <players>    
+                <player jersey="1" height="185cm" weight="75kg" birthdate="June 19, 1982" hometown="Santa Cruz, California" year="10">
+                    <name>tharik yadav</name>
+                    <position>Outside Hitter</position>
+                </player>
+                <player jersey="2" height="191cm" weight="82kg" birthdate="June 14, 1986" hometown="Houston, Texas" year="10">
+                    <name>tilak sen</name>
+                    <position>Middle Blocker</position>
+                </player>
+                <player jersey="3" height="188cm" weight="72kg" birthdate="January 10, 1990" hometown="Sachse, Texas" year="7">
+                    <name>vishwjit yagik</name>
+                    <position>Opposite Hitter</position>
+                </player>
+                <player jersey="4" height="188cm" weight="78kg" birthdate="June 4, 1988" hometown="Parker, Colorado" year="13">
+                    <name>Kelsey Robinson</name>
+                    <position>Outside Hitter</position>
+                </player>
+                <player jersey="5" height="190cm" weight="75kg" birthdate="November 18, 1993" hometown="El Segundo, California" year="5">
+                    <name>aniket choudhary</name>
+                    <position>Middle Blocker</position>
+                </player>
+                <player jersey="6" height="168cm" weight="61kg" birthdate="July 5, 1987" hometown="Cypress, California" year="11">
+                    <name>Atuk kumar</name>
+                    <position>Outside Hitter</position>
+                </player>
+            </players>
+        </team>
+    </teams>
+    <referees>
+        <referee type="first" experience="10 years">John Smith</referee>
+        <referee type="second" experience="5 years">Mary Johnson</referee>
+    </referees>
+    <match id="B001" court="1">
+        <team1 teamref="usa" captain="Johnny Depp" color="Red" serve_order="1">USA</team1>
+        <team2 teamref="canada" captain="Kelsey Robinson" color="White" serve_order="2">Canada</team2>
+        <sets>
+            <set id="B001a" number="1">
+                <team1_score timeout="1">25</team1_score>
+                <team2_score timeout="0">22</team2_score>
+            </set>
+            <set id="B001b" number="2">
+                <team1_score timeout="0">22</team1_score>
+                <team2_score timeout="1">25</team2_score>
+            </set>
+            <set id="B001c" number="3">
+                <team1_score timeout="2">25</team1_score>
+                <team2_score timeout="0">20</team2_score>
+            </set>
+        </sets>
+        <referee type="first">John Smith</referee>
+        <line_judge position="left">Mary Johnson</line_judge>
+        <line_judge position="right">Peter Parker</line_judge>
+    </match>   
+  </tournament>
+
+  <tournament>
+    <name>Miyagi Interhigh Prelims</name>
+    <location>Tokyo, Japan</location>
+    <date>2020-12-01</date>
+    <venue>Aikake Tokyo Center</venue>
+    <organizer>Tokyo Volleyball Association</organizer>
+    <sponsor>Asics</sponsor>
+    <sponsor>Nike</sponsor>
+    <teams>
+      <team teamID="karasuno">
+        <name>Karasuno High</name>
+        <coach>Keishin Ukai</coach>
+        <players>
+          <player jersey="1" height="176.8cm" weight="70kg" birthdate="1994-12-31" hometown="Miyagi Prefecture, Japan" year="3">
+            <name>Daichi Sawamura</name>
+            <position>Outside Hitter</position>
+          </player>
+          <player jersey="3" height="186.4cm" weight="75.2kg" birthdate="1995-01-01" hometown="Miyagi Prefecture, Japan" year="3">
+            <name>Azumane Asahi</name>
+            <position>Ace</position>
+          </player>
+          <player jersey="4" height="160cm" weight="51kg" birthdate="1995-10-10" hometown="Miyagi Prefecture, Japan" year="2">
+            <name>Yu Nishinoya</name>
+            <position>Libero</position>
+          </player>
+          <player jersey="2" height="181cm" weight="66kg" birthdate="1996-12-22" hometown="Miyagi Prefecture, Japan" year="2">
+            <name>Tobio Kageyama</name>
+            <position>Setter</position>
+          </player>
+          <player jersey="5" height="164.2cm" weight="51.9kg" birthdate="1996-06-21" hometown="Miyagi Prefecture, Japan" year="2">
+            <name>Shoyo Hinata</name>
+            <position>Middle Blocker</position>
+          </player>
+          <player jersey="7" height="190cm" weight="68kg" birthdate="1996-09-27" hometown="Miyagi Prefecture, Japan" year="3">
+            <name>Kei Tsukishima</name>
+            <position>Middle Blocker</position>
+          </player>
+        </players>
+        
+      </team>
+      
+      <team teamID="aoba_johsai">
+        <name>Aoba Johsai High</name>
+        <coach>Nobuteru Irihata</coach>
+        <players>    
+          <player jersey="1" height="184.3cm" weight="72kg" birthdate="1994-07-20" hometown="Miyagi Prefecture, Japan" year="3">
+            <name>Toru Oikawa</name>
+            <position>Setter</position>
+          </player>
+          <player jersey="2" height="187.9cm" weight="73.8kg" birthdate="1986-09-29" hometown="Miyagi Prefecture, Japan" year="3">
+            <name>Issei Matsukawa</name>
+            <position>Middle Blocker</position>
+          </player>
+          <player jersey="3" height="184cm" weight="72kg" birthdate="1995-03-01" hometown="Miyagi Prefecture, Japan" year="2">
+            <name>Takahiro Hanamaki</name>
+            <position>Outside Hitter</position>
+          </player>
+          <player jersey="4" height="178cm" weight="70kg" birthdate="1988-05-21" hometown="Miyagi Prefecture, Japan" year="3">
+            <name>Hajime Iwaizumi</name>
+            <position>Ace</position>
+          </player>
+          <player jersey="5" height="171cm" weight="62kg" birthdate="1995-12-02" hometown="Miyagi Prefecture, Japan" year="3">
+            <name>Shinji Watari</name>
+            <position>Libero</position>
+          </player>
+          <player jersey="6" height="180m" weight="61kg" birthdate="1995-10-20" hometown="Miyagi Prefecture, Japan" year="4">
+            <name>Yutaro Kindaichi</name>
+            <position>Middle Blocker</position>
+          </player>
+        </players>
+      </team>
+      
+      <team teamID="shiratorizawa">
+        <name>Shiratorizawa Academy</name>
+        <coach>Tanji Washijō</coach>
+        <players>    
+          <player jersey="1" height="181.3cm" weight="71kg" birthdate="1994-02-10" hometown="Miyagi Prefecture, Japan" year="3">
+            <name>Wakatoshi Ushijima</name>
+            <position>Ace</position>
+          </player>
+          <player jersey="2" height="179.9cm" weight="73.8kg" birthdate="1986-05-02" hometown="Miyagi Prefecture, Japan" year="4">
+            <name>Satori Tendo</name>
+            <position>Middle Blocker</position>
+          </player>
+          <player jersey="3" height="182cm" weight="70kg" birthdate="1995-08-09" hometown="Miyagi Prefecture, Japan" year="3">
+            <name>Tsutomu Goshiki</name>
+            <position>Outside Hitter</position>
+          </player>
+          <player jersey="4" height="173cm" weight="68kg" birthdate="1988-03-11" hometown="Miyagi Prefecture, Japan" year="3">
+            <name>Kenjirō Shirabu</name>
+            <position>Setter</position>
+          </player>
+          <player jersey="5" height="179cm" weight="69kg" birthdate="1995-02-22" hometown="Miyagi Prefecture, Japan" year="4">
+            <name>Hayato Yamagata</name>
+            <position>Libero</position>
+          </player>
+          <player jersey="6" height="180cm" weight="66kg" birthdate="1995-05-12" hometown="Miyagi Prefecture, Japan" year="4">
+            <name>Taichi Kawanishi</name>
+            <position>Middle Blocker</position>
+          </player>
+        </players>
+      </team>
+      
+      
+    </teams>
+    <referees>
+      <referee type="first" experience="6 years">Kei Sosuke</referee>
+      <referee type="second" experience="3 years">Kanaka Shinzo</referee>
+    </referees>
+    <match id="S001" court="1">
+      <team1 teamref="karasuno" captain="Daichi Sawamura" color="Black" serve_order="1">Karasuno High</team1>
+      <team2 teamref="aoba_johsai" captain="Toru Oikawa" color="Blue" serve_order="2">Aoba Johsai High</team2>
+      <sets>
+        <set id="S001a" number="1">
+          <team1_score timeout="1">25</team1_score>
+          <team2_score timeout="0">23</team2_score>
+        </set>
+        <set id="S001b" number="2">
+          <team1_score timeout="1">26</team1_score>
+          <team2_score timeout="1">28</team2_score>
+        </set>
+        <set id="S001c" number="3">
+          <team1_score timeout="2">26</team1_score>
+          <team2_score timeout="1">24</team2_score>
+        </set>
+      </sets>
+      <referee type="first">Kei Sosuke</referee>
+      <line_judge position="left">Yamato Shoyo</line_judge>
+      <line_judge position="right">Kaneki Kunimi</line_judge>
+    </match>
+    <match id="S002" court="1">
+      <team1 teamref="karasuno" captain="Daichi Sawamura" color="Black" serve_order="1">Karasuno High</team1>
+      <team2 teamref="shiratorizawa" captain="Wakatoshi Ushijima" color="Purple" serve_order="2">Shiratorizawa Academy</team2>
+      <sets>
+        <set id="S002a" number="1">
+          <team1_score timeout="1">16</team1_score>
+          <team2_score timeout="0">25</team2_score>
+        </set>
+        <set id="S002b" number="2">
+          <team1_score timeout="2">31</team1_score>
+          <team2_score timeout="1">29</team2_score>
+        </set>
+        <set id="S002c" number="3">
+          <team1_score timeout="2">18</team1_score>
+          <team2_score timeout="2">25</team2_score>
+        </set>
+        <set id="S002d" number="4">
+          <team1_score timeout="2">29</team1_score>
+          <team2_score timeout="2">27</team2_score>
+        </set>
+        <set id="S002e" number="5">
+          <team1_score timeout="2">21</team1_score>
+          <team2_score timeout="2">19</team2_score>
+        </set>
+      </sets>
+      <referee type="second">Kanaka Shinzo</referee>
+      <line_judge position="left">Yamato Shoyo</line_judge>
+      <line_judge position="right">Kaneki Kunimi</line_judge>
+    </match>      
+  </tournament>
+
+<tournament>
+    <name>Men's Indoor Volleyball Tournament 2020 Summer Olympics</name>
+    <location>Tokyo, Japan</location>
+    <date>24-07-2021, 08-08-2021</date>
+    <venue>Ariake Arena</venue>
+    <organizer>International Olympic Committee</organizer>
+    <sponsor>Coca-Cola</sponsor>
+    <sponsor>Samsung</sponsor>
+    <sponsor>Visa</sponsor>
+    <sponsor>ProcterGamble</sponsor>
+    
+    <teams>
+      <team teamID="Japan1">
+        <name>Japan</name>
+        <coach>Nakagaichi Yuichi</coach>
+        <players>
+          <player>
+            <name>Shimzu</name>
+            <position>O</position>
+          </player>
+          <player>
+            <name>Onodera</name>
+            <position>MB</position>
+          </player>
+          <player>
+            <name>Fujii</name>
+            <position>S</position>
+          </player>
+          <player>
+            <name>Yamauchi</name>
+            <position>MB</position>
+          </player>
+          <player>
+            <name>Nishida</name>
+            <position>O</position>
+          </player>
+          <player>
+            <name>Sekita</name>
+            <position>S</position>
+          </player>
+          <player>
+            <name>Ishikawa</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Lee</name>
+            <position>MB</position>
+          </player>
+          <player>
+            <name>Takanashi</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Otsuka</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Yamamoto</name>
+            <position>L</position>
+          </player>
+          <player>
+            <name>R. Takahashi</name>
+            <position>OH</position>
+          </player>
+        </players>
+      </team>
+      <team teamID="Brazil1">
+        <name>Brazil</name>
+        <players>
+          <player>
+            <name>Kadhi A</name>
+            <position>MB</position>
+          </player>
+          <player>
+            <name>Ben Slimene K</name>
+            <position>S</position>
+          </player>
+          <player>
+            <name>B. Othmen M.</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Karamosli E</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Agrebi O</name>
+            <position>MB</position>
+          </player>
+          <player>
+            <name>Nagga H.</name>
+            <position>O</position>
+          </player>
+          <player>
+            <name>Moalla I</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Ben Cheikh M</name>
+            <position>S</position>
+          </player>
+          <player>
+            <name>Mbareki. S</name>
+            <position>MB</position>
+          </player>
+          <player>
+            <name>Ben Tara W</name>
+            <position>O</position>
+          </player>
+          <player>
+            <name>Bouguerra. A</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Hmissi S</name>
+            <position>L</position>
+          </player>
+        </players>
+      </team>
+      <team teamID="Poland1">
+        <name>Poland</name>
+        <players>
+          <player>
+            <name>Nowakowski</name>
+            <position>MB</position>
+          </player>
+          <player>
+            <name>Kaczmarek </name>
+            <position>O</position>
+          </player>
+          <player>
+            <name>Kurek</name>
+            <position>O</position>
+          </player>
+          <player>
+            <name>Leon</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Drzyzga</name>
+            <position>S</position>
+          </player>
+          <player>
+            <name>Lomacz</name>
+            <position>S</position>
+          </player>
+          <player>
+            <name>Kubika</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Sliwka</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Kochanowski</name>
+            <position>MB</position>
+          </player>
+          <player>
+            <name>Semeniuk</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Zatorski</name>
+            <position>L</position>
+          </player>
+          <player>
+            <name>Bieniek</name>
+            <position>MB</position>
+          </player>
+        </players>
+      </team>
+      <team teamID="USA1">
+        <name>USA</name>
+        <players>
+          <player>
+            <name>Anderson</name>
+            <position>O</position>
+          </player>
+          <player>
+            <name>T. Sander</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Ensing</name>
+            <position>O</position>
+          </player>
+          <player>
+            <name>Stahl</name>
+            <position>MB</position>
+          </player>
+          <player>
+            <name>K. Shoji</name>
+            <position>S</position>
+          </player>
+          <player>
+            <name>Defalco</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Christenson</name>
+            <position>S</position>
+          </player>
+          <player>
+            <name>Holt</name>
+            <position>MB</position>
+          </player>
+          <player>
+            <name>Jaeschke</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Muagututia</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Smith</name>
+            <position>MB</position>
+          </player>
+          <player>
+            <name>E. Shoji</name>
+            <position>L</position>
+          </player>
+        </players>
+      </team>
+      <team teamID="Italy1">
+        <name>Italy</name>
+        <coach>Blengini Gianlorenzo</coach>
+        <players>
+          <player>
+            <name>Kovar</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Vettori</name>
+            <position>O</position>
+          </player>
+          <player>
+            <name>Juantorena</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Giannelli</name>
+            <position>S</position>
+          </player>
+          <player>
+            <name>Zaytsev</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Piano</name>
+            <position>MB</position>
+          </player>
+          <player>
+            <name>Colaci</name>
+            <position>L</position>
+          </player>
+          <player>
+            <name>Galassi</name>
+            <position>MB</position>
+          </player>
+          <player>
+            <name>Sbertoli</name>
+            <position>S</position>
+          </player>
+          <player>
+            <name>Anazani</name>
+            <position>MB</position>
+          </player>
+          <player>
+            <name>Michieletto</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Lavia</name>
+            <position>OH</position>
+          </player>
+        </players>
+      </team>
+      <team teamID="ROC1">
+        <name>ROC</name>
+        <players>
+          <player>
+            <name>Podlesnykh</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Volvich</name>
+            <position>MB</position>
+          </player>
+          <player>
+            <name>Volkov</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Iakovlev</name>
+            <position>MB</position>
+          </player>
+          <player>
+            <name>Bogdan</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Pankov</name>
+            <position>S</position>
+          </player>
+          <player>
+            <name>Poletaev</name>
+            <position>O</position>
+          </player>
+          <player>
+            <name>Mikhaylov</name>
+            <position>O</position>
+          </player>
+          <player>
+            <name>Kliuka</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Kurakaev</name>
+            <position>MB</position>
+          </player>
+          <player>
+            <name>Kobzar</name>
+            <position>S</position>
+          </player>
+          <player>
+            <name>Golubev</name>
+            <position>L</position>
+          </player>
+        </players>
+      </team>
+      <team teamID="Canada1">
+        <name>Canada</name>
+        <coach>Hoag Glenn</coach>
+        <players>
+          <player>
+            <name>Perrin</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>TJ</name>
+            <position>S</position>
+          </player>
+          <player>
+            <name>Marshall</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Hoag</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Maar</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Blankenau</name>
+            <position>S</position>
+          </player>
+          <player>
+            <name>Sclater</name>
+            <position>O</position>
+          </player>
+          <player>
+            <name>Vanberkel</name>
+            <position>MB</position>
+          </player>
+          <player>
+            <name>Vernon</name>
+            <position>O</position>
+          </player>
+          <player>
+            <name>Vigrass</name>
+            <position>MB</position>
+          </player>
+          <player>
+            <name>Bann</name>
+            <position>L</position>
+          </player>
+          <player>
+            <name>Szwarc</name>
+            <position>MB</position>
+          </player>
+        </players>
+      </team>
+      <team teamID="Argentina1">
+        <name>Argentina</name>
+        <players>
+          <player>
+            <name>Sanchez</name>
+            <position>S</position>
+          </player>
+          <player>
+            <name>Pereyra</name>
+            <position>O</position>
+          </player>
+          <player>
+            <name>Poglajen</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Conte</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Loser</name>
+            <position>MB</position>
+          </player>
+          <player>
+            <name>Danani</name>
+            <position>L</position>
+          </player>
+          <player>
+            <name>Sole</name>
+            <position>MB</position>
+          </player>
+          <player>
+            <name>Lima</name>
+            <position>O</position>
+          </player>
+          <player>
+            <name>Palacios</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>de Cecco</name>
+            <position>S</position>
+          </player>
+          <player>
+            <name>Mendez</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Ramos</name>
+            <position></position>
+          </player>
+        </players>
+      </team>
+      <team teamID="Iran1">
+        <name>Iran</name>
+        <players>
+          <player>
+            <name>Milad</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>S. Marouf</name>
+            <position>S</position>
+          </player>
+          <player>
+            <name>Seyed</name>
+            <position>MB</position>
+          </player>
+          <player>
+            <name>M. Gholami</name>
+            <position>MB</position>
+          </player>
+          <player>
+            <name>A. Ghafour</name>
+            <position>O</position>
+          </player>
+          <player>
+            <name>S. Kazemi</name>
+            <position>O</position>
+          </player>
+          <player>
+            <name>Sharifi</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Mojard</name>
+            <position>MB</position>
+          </player>
+          <player>
+            <name>Salehi</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>M. Marandi</name>
+            <position>L</position>
+          </player>
+          <player>
+            <name>A. Salehi</name>
+            <position>L</position>
+          </player>
+          <player>
+            <name>Karimi</name>
+            <position>S</position>
+          </player>
+        </players>
+      </team>
+      <team teamID="France1">
+        <name>France</name>
+        <players>
+          <player>
+            <name>Chinenyeze</name>
+            <position>MB</position>
+          </player>
+          <player>
+            <name>Grebennikov</name>
+            <position>L</position>
+          </player>
+          <player>
+            <name>Patry</name>
+            <position>O</position>
+          </player>
+          <player>
+            <name>Toniutti</name>
+            <position>S</position>
+          </player>
+          <player>
+            <name>Tillie</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Ngapeth</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Brizard</name>
+            <position>S</position>
+          </player>
+          <player>
+            <name>Boyer</name>
+            <position>O</position>
+          </player>
+          <player>
+            <name>le Goff</name>
+            <position>MB</position>
+          </player>
+          <player>
+            <name>Bultor</name>
+            <position>MB</position>
+          </player>
+          <player>
+            <name>Clevenot</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Louati</name>
+            <position>OH</position>
+          </player>
+        </players>
+      </team>
+      <team teamID="Venezula1">
+        <name>Venezuela</name>
+        <coach>Sarti Ronald</coach>
+        <players>
+          <player>
+            <name>Armando</name>
+            <position>S</position>
+          </player>
+          <player>
+            <name>Fernando</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Mata</name>
+            <position>L</position>
+          </player>
+          <player>
+            <name>Emerson</name>
+            <position>O</position>
+          </player>
+          <player>
+            <name>Oramas</name>
+            <position>MB</position>
+          </player>
+          <player>
+            <name>Valencia</name>
+            <position>MB</position>
+          </player>
+          <player>
+            <name>Chema</name>
+            <position>S</position>
+          </player>
+          <player>
+            <name>Verdi</name>
+            <position>MB</position>
+          </player>
+          <player>
+            <name>Canelo</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Maita</name>
+            <position>O</position>
+          </player>
+          <player>
+            <name>Fayola</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Willner</name>
+            <position>OH</position>
+          </player>
+        </players>
+      </team>
+      <team teamID="Tunisia1">
+        <name>Tunisia</name>
+        <players>
+          <player>
+            <name>Bruno</name>
+            <position>S</position>
+          </player>
+          <player>
+            <name>Mauricio</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Fernando</name>
+            <position>S</position>
+          </player>
+          <player>
+            <name>Wallace</name>
+            <position>O</position>
+          </player>
+          <player>
+            <name>Leal</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Isac</name>
+            <position>MB</position>
+          </player>
+          <player>
+            <name>Souza</name>
+            <position>MB</position>
+          </player>
+          <player>
+            <name>Douglas</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Lucas</name>
+            <position>MB</position>
+          </player>
+          <player>
+            <name>Thales</name>
+            <position>L</position>
+          </player>
+          <player>
+            <name>Lucarelli</name>
+            <position>OH</position>
+          </player>
+          <player>
+            <name>Alan</name>
+            <position>O</position>
+          </player>
+        </players>
+      </team>
+    </teams>
+    <referees>
+      <referee type="None">Hernan Casamiquela</referee>
+      <referee type="None">Paulo Turci</referee>
+      <referee type="None">Liu Jiang</referee>
+      <referee type="None">Denny Cespedes</referee>
+      <referee type="None">Fabrice Collados</referee>
+      <referee type="None">Daniele Rapisarda</referee>
+      <referee type="None">Shin Muranaka</referee>
+      <referee type="None">Sumie Myoi</referee>
+      <referee type="None">Luis Macias</referee>
+      <referee type="None">Wojciech Maroszek</referee>
+      <referee type="None">Evgeny Makshanov</referee>
+      <referee type="None">Vladimir Simonović</referee>
+      <referee type="None">Juraj Mokrý</referee>
+      <referee type="None">Kang Joo-hee</referee>
+      <referee type="None">Susana Rodríguez</referee>
+      <referee type="None">Hamid Al-Rousi</referee>
+      <referee type="None">Patricia Rolf</referee>
+    </referees>
+    <match id="MA001">
+      <team1 teamref="Italy1" captain="Zaytsev" />
+      <team2 teamref="Canada1" captain="Perrin" />
+      <sets>
+        <set number="1" duration="34">
+          <team1_score>26</team1_score>
+          <team2_score>28</team2_score>
+        </set>
+        <set number="2" duration="27">
+          <team1_score>18</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="3" duration="29">
+          <team1_score>25</team1_score>
+          <team2_score>21</team2_score>
+        </set>
+        <set number="4" duration="28">
+          <team1_score>25</team1_score>
+          <team2_score>18</team2_score>
+        </set>
+        <set number="5" duration="19">
+          <team1_score>15</team1_score>
+          <team2_score>11</team2_score>
+        </set>
+      </sets>
+    </match>
+    <match id="MA002">
+      <team1 teamref="Japan1" captain="Ishikawa" />
+      <team2 teamref="Venezula1" captain="Chema" />
+      <sets>
+        <set number="1" duration="29">
+          <team1_score>25</team1_score>
+          <team2_score>21</team2_score>
+        </set>
+        <set number="2" duration="27">
+          <team1_score>25</team1_score>
+          <team2_score>20</team2_score>
+        </set>
+        <set number="3" duration="27">
+          <team1_score>25</team1_score>
+          <team2_score>15</team2_score>
+        </set>
+      </sets>
+    </match>
+    <match id="MA003">
+      <team1 teamref="Poland1" captain="Kubuak" />
+      <team2 teamref="Iran1" captain="S. Marouf" />
+      <sets>
+        <set number="1" duration="27">
+          <team1_score>25</team1_score>
+          <team2_score>18</team2_score>
+        </set>
+        <set number="2" duration="31">
+          <team1_score>22</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="3" duration="33">
+          <team1_score>22</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="4" duration="31">
+          <team1_score>25</team1_score>
+          <team2_score>22</team2_score>
+        </set>
+        <set number="5" duration="32">
+          <team1_score>21</team1_score>
+          <team2_score>23</team2_score>
+        </set>
+      </sets>
+    </match>
+
+    <match id="MA004">
+      <team1 teamref="Iran1" captain="S. Marouf" />
+      <team2 teamref="Venezula1" captain="Chema" />
+      <sets>
+        <set number="1" duration="25">
+          <team1_score>25</team1_score>
+          <team2_score>17</team2_score>
+        </set>
+        <set number="2" duration="29">
+          <team1_score>25</team1_score>
+          <team2_score>20</team2_score>
+        </set>
+        <set number="3" duration="29">
+          <team1_score>25</team1_score>
+          <team2_score>18</team2_score>
+        </set>
+      </sets>
+    </match>
+
+    <match id="MA005">
+      <team1 teamref="Poland1" captain="Kubuak" />
+      <team2 teamref="Italy1" captain="Zaytsev" />
+      <sets>
+        <set number="1" duration="26">
+          <team1_score>25</team1_score>
+          <team2_score>18</team2_score>
+        </set>
+        <set number="2" duration="34">
+          <team1_score>22</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="3" duration="31">
+          <team1_score>22</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+      </sets>
+    </match>
+
+    <match id="MA006">
+      <team1 teamref="Japan1" captain="Ishikawa" />
+      <team2 teamref="Canada1" captain="Perrin" />
+      <sets>
+        <set number="1" duration="29">
+          <team1_score>23</team1_score>
+          <team2_score>15</team2_score>
+        </set>
+        <set number="2" duration="32">
+          <team1_score>25</team1_score>
+          <team2_score>23</team2_score>
+        </set>
+        <set number="3" duration="32">
+          <team1_score>25</team1_score>
+          <team2_score>23</team2_score>
+        </set>
+        <set number="4" duration="35">
+          <team1_score>25</team1_score>
+          <team2_score>20</team2_score>
+        </set>
+      </sets>
+    </match>
+
+    <match id="MA007">
+      <team1 teamref="Canada1" captain="Perrin" />
+      <team2 teamref="Iran1" captain="S. Marouf" />
+      <sets>
+        <set number="1" duration="24">
+          <team1_score>25</team1_score>
+          <team2_score>16</team2_score>
+        </set>
+        <set number="2" duration="36">
+          <team1_score>25</team1_score>
+          <team2_score>20</team2_score>
+        </set>
+        <set number="3" duration="31">
+          <team1_score>25</team1_score>
+          <team2_score>22</team2_score>
+        </set>
+      </sets>
+    </match>
+
+    <match id="MA008">
+      <team1 teamref="Poland1" captain="Kubuak" />
+      <team2 teamref="Venezula1" captain="Chema" />
+      <sets>
+        <set number="1" duration="25">
+          <team1_score>25</team1_score>
+          <team2_score>16</team2_score>
+        </set>
+        <set number="2" duration="24">
+          <team1_score>25</team1_score>
+          <team2_score>13</team2_score>
+        </set>
+        <set number="3" duration="26">
+          <team1_score>18</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="4" duration="25">
+          <team1_score>25</team1_score>
+          <team2_score>15</team2_score>
+        </set>
+      </sets>
+    </match>
+
+    <match id="MA009">
+      <team1 teamref="Japan1" captain="Ishikawa" />
+      <team2 teamref="Canada1" captain="Perrin" />
+      <sets>
+        <set number="1" duration="29">
+          <team1_score>23</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="2" duration="32">
+          <team1_score>25</team1_score>
+          <team2_score>23</team2_score>
+        </set>
+        <set number="3" duration="32">
+          <team1_score>25</team1_score>
+          <team2_score>23</team2_score>
+        </set>
+        <set number="4" duration="35">
+          <team1_score>25</team1_score>
+          <team2_score>20</team2_score>
+        </set>
+      </sets>
+    </match>
+
+    <match id="MA010">
+      <team1 teamref="Canada1" captain="Perrrin" />
+      <team2 teamref="Iran1" captain="S. Marouf" />
+      <sets>
+        <set number="1" duration="24">
+          <team1_score>25</team1_score>
+          <team2_score>16</team2_score>
+        </set>
+        <set number="2" duration="36">
+          <team1_score>25</team1_score>
+          <team2_score>20</team2_score>
+        </set>
+        <set number="3" duration="31">
+          <team1_score>25</team1_score>
+          <team2_score>22</team2_score>
+        </set>
+      </sets>
+    </match>
+
+    <match id="MA011">
+      <team1 teamref="Poland1" captain="Kubuak" />
+      <team2 teamref="Venezula1" captain="Chema" />
+      <sets>
+        <set number="1" duration="25">
+          <team1_score>25</team1_score>
+          <team2_score>16</team2_score>
+        </set>
+        <set number="2" duration="24">
+          <team1_score>25</team1_score>
+          <team2_score>13</team2_score>
+        </set>
+        <set number="3" duration="26">
+          <team1_score>18</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="4" duration="25">
+          <team1_score>25</team1_score>
+          <team2_score>15</team2_score>
+        </set>
+      </sets>
+    </match>
+
+    <match id="MA012">
+      <team1 teamref="Japan1" captain="Ishikawa" />
+      <team2 teamref="Italy1" captain="Zaytsev" />
+      <sets>
+        <set number="1" duration="28">
+          <team1_score>20</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="2" duration="29">
+          <team1_score>17</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="3" duration="34">
+          <team1_score>25</team1_score>
+          <team2_score>23</team2_score>
+        </set>
+        <set number="4" duration="30">
+          <team1_score>21</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+      </sets>
+    </match>
+
+    <match id="MA013">
+      <team1 teamref="Canada1" captain="Perrrin" />
+      <team2 teamref="Venezula1" captain="Chema" />
+      <sets>
+        <set number="1" duration="23">
+          <team1_score>25</team1_score>
+          <team2_score>13</team2_score>
+        </set>
+        <set number="2" duration="29">
+          <team1_score>25</team1_score>
+          <team2_score>22</team2_score>
+        </set>
+        <set number="3" duration="22">
+          <team1_score>25</team1_score>
+          <team2_score>12</team2_score>
+        </set>
+      </sets>
+    </match>
+
+    <match id="MA014">
+      <team1 teamref="Japan1" captain="Ishikawa" />
+      <team2 teamref="Poland1" captain="Kubuak" />
+      <sets>
+        <set number="1" duration="30">
+          <team1_score>22</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="2" duration="30">
+          <team1_score>21</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="3" duration="34">
+          <team1_score>24</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+      </sets>
+    </match>
+
+    <match id="MA015">
+      <team1 teamref="Italy1" captain="Zaytsev" />
+      <team2 teamref="Iran1" captain="S. Marouf" />
+      <sets>
+        <set number="1" duration="39">
+          <team1_score>30</team1_score>
+          <team2_score>28</team2_score>
+        </set>
+        <set number="2" duration="31">
+          <team1_score>25</team1_score>
+          <team2_score>21</team2_score>
+        </set>
+        <set number="3" duration="32">
+          <team1_score>21</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="4" duration="31">
+          <team1_score>25</team1_score>
+          <team2_score>21</team2_score>
+        </set>
+      </sets>
+    </match>
+    
+    <match id="MA016">
+      <team1 teamref="Poland1" captain="Kubuak" />
+      <team2 teamref="Canada1" captain="Perrin" />
+      <sets>
+        <set number="1" duration="22">
+          <team1_score>25</team1_score>
+          <team2_score>15</team2_score>
+        </set>
+        <set number="2" duration="27">
+          <team1_score>25</team1_score>
+          <team2_score>21</team2_score>
+        </set>
+        <set number="3" duration="26">
+          <team1_score>25</team1_score>
+          <team2_score>16</team2_score>
+        </set>
+      </sets>
+    </match>
+
+    <match id="MA017">
+      <team1 teamref="Italy1" captain="Zaytsev" />
+      <team2 teamref="Venezula1" captain="Chema" />
+      <sets>
+        <set number="1" duration="30">
+          <team1_score>25</team1_score>
+          <team2_score>22</team2_score>
+        </set>
+        <set number="2" duration="25">
+          <team1_score>25</team1_score>
+          <team2_score>15</team2_score>
+        </set>
+        <set number="3" duration="25">
+          <team1_score>25</team1_score>
+          <team2_score>17</team2_score>
+        </set>
+      </sets>
+    </match>
+    
+    <match id="MA018">
+      <team1 teamref="Japan1" captain="Ishikawa" />
+      <team2 teamref="Iran1" captain="S. Marouf" />
+      <sets>
+        <set number="1" duration="28">
+          <team1_score>25</team1_score>
+          <team2_score>21</team2_score>
+        </set>
+        <set number="2" duration="28">
+          <team1_score>20</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="3" duration="49">
+          <team1_score>29</team1_score>
+          <team2_score>31</team2_score>
+        </set>
+        <set number="4" duration="32">
+          <team1_score>25</team1_score>
+          <team2_score>22</team2_score>
+        </set>
+        <set number="5" duration="20">
+          <team1_score>15</team1_score>
+          <team2_score>13</team2_score>
+        </set>
+      </sets>
+    </match>
+
+    <match id="MB001">
+      <team1 teamref="Brazil1" captain="Bruno"/>
+      <team2 teamref="Tunisia1" captain="Ben Cheikh M"/>
+      <sets>
+        <set number="1" duration="29">
+          <team1_score>25</team1_score>
+          <team2_score>22</team2_score>
+        </set>
+        <set number="2" duration="28">
+          <team1_score>25</team1_score>
+          <team2_score>20</team2_score>
+        </set>
+        <set number="3" duration="24">
+          <team1_score>25</team1_score>
+          <team2_score>15</team2_score>
+        </set>
+      </sets>
+    </match>
+
+    <match id="MB002">
+      <team1 teamref="ROC1" captain="Kobzar"/>
+      <team2 teamref="Argentina1" captain="de Cecco"/>
+      <sets>
+        <set number="1" duration="28">
+          <team1_score>21</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="2" duration="33">
+          <team1_score>25</team1_score>
+          <team2_score>23</team2_score>
+        </set>
+        <set number="3" duration="29">
+          <team1_score>25</team1_score>
+          <team2_score>17</team2_score>
+        </set>
+        <set number="4" duration="30">
+          <team1_score>25</team1_score>
+          <team2_score>21</team2_score>
+        </set>
+      </sets>
+    </match>
+
+    <match id="MB003">
+      <team1 teamref="USA1" captain="K. Shoji"/>
+      <team2 teamref="France1" captain="Toniutti"/>
+      <sets>
+        <set number="1" duration="28">
+          <team1_score>25</team1_score>
+          <team2_score>18</team2_score>
+        </set>
+        <set number="2" duration="27">
+          <team1_score>25</team1_score>
+          <team2_score>18</team2_score>
+        </set>
+        <set number="3" duration="30">
+          <team1_score>25</team1_score>
+          <team2_score>22</team2_score>
+        </set>
+      </sets>
+    </match>
+
+    <match id="MB004">
+      <team1 teamref="USA1" captain="K. Shoji"/>
+      <team2 teamref="ROC1" captain="Kobzar"/>
+      <sets>
+        <set number="1" duration="34">
+          <team1_score>23</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="2" duration="36">
+          <team1_score>25</team1_score>
+          <team2_score>27</team2_score>
+        </set>
+        <set number="3" duration="30">
+          <team1_score>25</team1_score>
+          <team2_score>21</team2_score>
+        </set>
+        <set number="4" duration="35">
+          <team1_score>23</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+      </sets>
+    </match>
+
+    <match id="MB005">
+      <team1 teamref="France1" captain="Toniutti"/>
+      <team2 teamref="Tunisia1" captain="Ben Cheikh M"/>
+      <sets>
+        <set number="1" duration="27">
+          <team1_score>25</team1_score>
+          <team2_score>21</team2_score>
+        </set>
+        <set number="2" duration="23">
+          <team1_score>25</team1_score>
+          <team2_score>11</team2_score>
+        </set>
+        <set number="3" duration="32">
+          <team1_score>25</team1_score>
+          <team2_score>21</team2_score>
+        </set>
+      </sets>
+    </match>
+
+    <match id="MB006">
+      <team1 teamref="Brazil1" captain="Bruno"/>
+      <team2 teamref="Argentina1" captain="de Cecco"/>
+      <sets>
+        <set number="1" duration="27">
+          <team1_score>19</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="2" duration="29">
+          <team1_score>21</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="3" duration="28">
+          <team1_score>25</team1_score>
+          <team2_score>16</team2_score>
+        </set>
+        <set number="4" duration="34">
+          <team1_score>25</team1_score>
+          <team2_score>21</team2_score>
+        </set>
+        <set number="5" duration="23">
+          <team1_score>16</team1_score>
+          <team2_score>14</team2_score>
+        </set>
+      </sets>
+    </match>
+
+    <match id="MB007">
+      <team1 teamref="USA1" captain="K. Shoji"/>
+      <team2 teamref="Tunisia1" captain="Ben Cheikh M"/>
+      <sets>
+        <set number="1" duration="26">
+          <team1_score>25</team1_score>
+          <team2_score>14</team2_score>
+        </set>
+        <set number="2" duration="32">
+          <team1_score>23</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="3" duration="24">
+          <team1_score>25</team1_score>
+          <team2_score>14</team2_score>
+        </set>
+        <set number="4" duration="30">
+          <team1_score>25</team1_score>
+          <team2_score>23</team2_score>
+        </set>
+      </sets>
+    </match>
+
+    <match id="MB008">
+      <team1 teamref="Argentina1" captain="de Cecco"/>
+      <team2 teamref="France1" captain="Toniutti"/>
+      <sets>
+        <set number="1" duration="28">
+          <team1_score>23</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="2" duration="27">
+          <team1_score>25</team1_score>
+          <team2_score>17</team2_score>
+        </set>
+        <set number="3" duration="29">
+          <team1_score>25</team1_score>
+          <team2_score>20</team2_score>
+        </set>
+        <set number="4" duration="28">
+          <team1_score>15</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="5" duration="17">
+          <team1_score>15</team1_score>
+          <team2_score>13</team2_score>
+        </set>
+      </sets>
+    </match>
+
+    <match id="MB009">
+      <team1 teamref="Brazil1" captain="Bruno"/>
+      <team2 teamref="ROC1" captain="Kobzar"/>
+      <sets>
+        <set number="1" duration="30">
+          <team1_score>22</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="2" duration="28">
+          <team1_score>20</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="3" duration="29">
+          <team1_score>20</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+      </sets>
+    </match>
+
+    <match id="MB010">
+      <team1 teamref="Brazil1" captain="Bruno"/>
+      <team2 teamref="USA1" captain="K. Shoji"/>
+      <sets>
+        <set number="1" duration="44">
+          <team1_score>30</team1_score>
+          <team2_score>32</team2_score>
+        </set>
+        <set number="2" duration="36">
+          <team1_score>25</team1_score>
+          <team2_score>23</team2_score>
+        </set>
+        <set number="3" duration="29">
+          <team1_score>25</team1_score>
+          <team2_score>21</team2_score>
+        </set>
+        <set number="4" duration="31">
+          <team1_score>25</team1_score>
+          <team2_score>20</team2_score>
+        </set>
+      </sets>
+    </match>
+
+    <match id="MB011">
+      <team1 teamref="Argentina1" captain="de Cecco"/>
+      <team2 teamref="Tunisia1" captain="Ben Cheikh M"/>
+      <sets>
+        <set number="1" duration="30">
+          <team1_score>23</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="2" duration="33">
+          <team1_score>23</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="3" duration="27">
+          <team1_score>25</team1_score>
+          <team2_score>19</team2_score>
+        </set>
+        <set number="4" duration="24">
+          <team1_score>25</team1_score>
+          <team2_score>18</team2_score>
+        </set>
+        <set number="5" duration="15">
+          <team1_score>15</team1_score>
+          <team2_score>9</team2_score>
+        </set>
+      </sets>
+    </match>
+
+    <match id="MB012">
+      <team1 teamref="ROC1" captain="Kobzar"/>
+      <team2 teamref="France1" captain="Toniutti"/>
+      <sets>
+        <set number="1" duration="26">
+          <team1_score>21</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="2" duration="27">
+          <team1_score>25</team1_score>
+          <team2_score>20</team2_score>
+        </set>
+        <set number="3" duration="26">
+          <team1_score>17</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="4" duration="30">
+          <team1_score>20</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+      </sets>
+    </match>
+
+    <match id="MB013">
+      <team1 teamref="Brazil1" captain="Bruno"/>
+      <team2 teamref="France1" captain="Toniutti"/>
+      <sets>
+        <set number="1" duration="26">
+          <team1_score>25</team1_score>
+          <team2_score>22</team2_score>
+        </set>
+        <set number="2" duration="51">
+          <team1_score>37</team1_score>
+          <team2_score>39</team2_score>
+        </set>
+        <set number="3" duration="25">
+          <team1_score>25</team1_score>
+          <team2_score>17</team2_score>
+        </set>
+        <set number="4" duration="29">
+          <team1_score>21</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="5" duration="27">
+          <team1_score>20</team1_score>
+          <team2_score>18</team2_score>
+        </set>
+      </sets>
+    </match>
+
+    <match id="MB014">
+      <team1 teamref="ROC1" captain="Kobzar"/>
+      <team2 teamref="Tunisia1" captain="Ben Cheikh M"/>
+      <sets>
+        <set number="1" duration="27">
+          <team1_score>25</team1_score>
+          <team2_score>20</team2_score>
+        </set>
+        <set number="2" duration="29">
+          <team1_score>25</team1_score>
+          <team2_score>22</team2_score>
+        </set>
+        <set number="3" duration="25">
+          <team1_score>25</team1_score>
+          <team2_score>16</team2_score>
+        </set>
+      </sets>
+    </match>
+
+    <match id="MB015">
+      <team1 teamref="USA1" captain="K. Shoji"/>
+      <team2 teamref="Argentina1" captain="de Cecco"/>
+      <sets>
+        <set number="1" duration="27">
+          <team1_score>21</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="2" duration="35">
+          <team1_score>23</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="3" duration="36">
+          <team1_score>23</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+      </sets>
+    </match>
+
+    <match id="MQ001">
+      <team1 teamref="Canada1" captain="Perrin"/>
+      <team2 teamref="ROC1" captain="Kobzar"/>
+      <sets>
+        <set number="1" duration="29">
+          <team1_score>21</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="2" duration="36">
+          <team1_score>28</team1_score>
+          <team2_score>30</team2_score>
+        </set>
+        <set number="3" duration="34">
+          <team1_score>22</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+      </sets>
+    </match>
+
+    <match id="MQ002">
+      <team1 teamref="Japan1" captain="Ishikawa"/>
+      <team2 teamref="Brazil1" captain="Bruno"/>
+      <sets>
+        <set number="1" duration="30">
+          <team1_score>20</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="2" duration="32">
+          <team1_score>22</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="3" duration="28">
+          <team1_score>20</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+      </sets>
+    </match>
+
+    <match id="MQ003">
+      <team1 teamref="Italy1" captain="Zaytsev"/>
+      <team2 teamref="Argentina1" captain="de Cecco"/>
+      <sets>
+        <set number="1" duration="29">
+          <team1_score>25</team1_score>
+          <team2_score>21</team2_score>
+        </set>
+        <set number="2" duration="35">
+          <team1_score>23</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="3" duration="32">
+          <team1_score>22</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="4" duration="24">
+          <team1_score>25</team1_score>
+          <team2_score>14</team2_score>
+        </set>
+        <set number="5" duration="21">
+          <team1_score>12</team1_score>
+          <team2_score>15</team2_score>
+        </set>
+      </sets>
+    </match>
+
+    <match id="MQ004">
+      <team1 teamref="Poland1" captain="Kubuak"/>
+      <team2 teamref="France1" captain="Toniutti"/>
+      <sets>
+        <set number="1" duration="30">
+          <team1_score>25</team1_score>
+          <team2_score>21</team2_score>
+        </set>
+        <set number="2" duration="28">
+          <team1_score>22</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="3" duration="30">
+          <team1_score>25</team1_score>
+          <team2_score>21</team2_score>
+        </set>
+        <set number="4" duration="29">
+          <team1_score>21</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="5" duration="16">
+          <team1_score>9</team1_score>
+          <team2_score>15</team2_score>
+        </set>
+      </sets>
+    </match>
+
+    <match id="MS001">
+      <team1 teamref="Brazil1" captain="Bruno"/>
+      <team2 teamref="ROC1" captain="Kobzar"/>
+      <sets>
+        <set number="1" duration="27">
+          <team1_score>25</team1_score>
+          <team2_score>18</team2_score>
+        </set>
+        <set number="2" duration="32">
+          <team1_score>21</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="3" duration="37">
+          <team1_score>24</team1_score>
+          <team2_score>26</team2_score>
+        </set>
+        <set number="4" duration="32">
+          <team1_score>23</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+      </sets>
+    </match>
+
+    <match id="MS002">
+      <team1 teamref="France1" captain="Toniutti"/>
+      <team2 teamref="Argentina1" captain="de Cecco"/>
+      <sets>
+        <set number="1" duration="27">
+          <team1_score>25</team1_score>
+          <team2_score>22</team2_score>
+        </set>
+        <set number="2" duration="29">
+          <team1_score>25</team1_score>
+          <team2_score>19</team2_score>
+        </set>
+        <set number="3" duration="31">
+          <team1_score>25</team1_score>
+          <team2_score>22</team2_score>
+        </set>
+      </sets>
+    </match>
+
+    <match id="M_finals">
+      <team1 teamref="France1" captain="Toniutti"/>
+      <team2 teamref="Brazil1" captain="Bruno"/>
+      <sets>
+        <set number="1" duration="29">
+          <team1_score>25</team1_score>
+          <team2_score>23</team2_score>
+        </set>
+        <set number="2" duration="27">
+          <team1_score>25</team1_score>
+          <team2_score>17</team2_score>
+        </set>
+        <set number="3" duration="30">
+          <team1_score>21</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="4" duration="31">
+          <team1_score>21</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="5" duration="18">
+          <team1_score>15</team1_score>
+          <team2_score>12</team2_score>
+        </set>
+      </sets>
+    </match>
+
+    <match id="M_bronze">
+      <team1 teamref="Argentina1" captain="de Cecco"/>
+      <team2 teamref="Brazil1" captain="Bruno"/>
+      <sets>
+        <set number="1" duration="30">
+          <team1_score>25</team1_score>
+          <team2_score>23</team2_score>
+        </set>
+        <set number="2" duration="26">
+          <team1_score>20</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="3" duration="31">
+          <team1_score>20</team1_score>
+          <team2_score>25</team2_score>
+        </set>
+        <set number="4" duration="29">
+          <team1_score>25</team1_score>
+          <team2_score>17</team2_score>
+        </set>
+        <set number="5" duration="21">
+          <team1_score>15</team1_score>
+          <team2_score>13</team2_score>
+        </set>
+      </sets>
+    </match>
+
+</tournament>
+</volleyball>
